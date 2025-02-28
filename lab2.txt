@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table style="border:3px solid #000;border-collapse:collapse;font-family:comic sans ms,cursive;width:100%;font-size:14px">
+        <tbody>
+            <tr>
+                <th colspan="2" style="border:3px solid #000;padding:10px;font-size:20px">Student Information Form</th>
+            </tr>
+            <tr>
+                <td style="border:2px solid #000;padding:8px">Student ID</td>
+                <td style="border:2px solid #000;padding:8px">
+                    <input name="ID" style="width:200px;font-size:12px" type="text" value="D10000000">
+                </td>
+            </tr>
+            <tr>
+                <td style="border:2px solid #000;padding:8px">Name</td>
+                <td style="border:2px solid #000;padding:8px">
+                    <input name="name" style="width:200px;font-size:12px" type="text" value="John Smith">
+                </td>
+            </tr>
+            <tr>
+                <td style="border:2px solid #000;padding:8px">Gender</td>
+                <td style="border:2px solid #000;padding:8px">
+                    <input name="gender" type="radio" value="Male"> Male 
+                    <input name="gender" type="radio" value="Female"> Female
+                </td>
+            </tr>
+            <tr>
+                <td style="border:2px solid #000;padding:8px">Habits</td>
+                <td style="border:2px solid #000;padding:8px">
+                    <input name="habit" type="checkbox" value="reading"> Reading 
+                    <input name="habit" type="checkbox" value="coding"> Coding 
+                    <input name="habit" type="checkbox" value="swimming"> Swimming
+                </td>
+            </tr>
+            <tr>
+                <td style="border:2px solid #000;padding:8px">Major</td>
+                <td style="border:2px solid #000;padding:8px">
+                    <select name="major" style="font-size:12px;width:200px">
+                        <option value="software">Software Engineering</option>
+                        <option value="finance">Financial Management</option>
+                        <option value="ai">Artificial Intelligence</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td style="border:2px solid #000;padding:8px">City</td>
+                <td style="border:2px solid #000;padding:8px">
+                    <select name="city" style="font-size:12px;width:200px">
+                        <option value="shanghai">Shanghai</option>
+                        <option value="beijing">Beijing</option>
+                        <option value="shenzhen">Shenzhen</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td style="border:2px solid #000;padding:8px">Experience</td>
+                <td style="border:2px solid #000;padding:8px">
+                    <textarea name="experience" rows="4" style="width:100%"></textarea>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
