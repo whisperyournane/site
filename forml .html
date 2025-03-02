@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户注册表单</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            text-align: left;
+            background-color: #f2f2f2;
+        }
+        .hidden-table {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>用户注册表单</h2>
+    <!-- 隐藏表格，用于布局 -->
+    <table class="hidden-table">
+        <tr>
+            <th>标签</th>
+            <th>字段</th>
+        </tr>
+        <tr>
+            <td>用户名称：</td>
+            <td><input type="text" name="username" placeholder="请输入用户名"></td>
+        </tr>
+        <tr>
+            <td>用户密码：</td>
+            <td><input type="password" name="password" placeholder="请输入密码"></td>
+        </tr>
+        <tr>
+            <td>用户性别：</td>
+            <td>
+                <label><input type="radio" name="gender" value="男"> 男</label>
+                <label><input type="radio" name="gender" value="女"> 女</label>
+            </td>
+        </tr>
+        <tr>
+            <td>爱好：</td>
+            <td>
+                <label><input type="checkbox" name="hobby" value="足球"> 足球</label>
+                <label><input type="checkbox" name="hobby" value="篮球"> 篮球</label>
+                <label><input type="checkbox" name="hobby" value="LOL"> LOL</label>
+                <label><input type="checkbox" name="hobby" value="韩剧"> 韩剧</label>
+                <label><input type="checkbox" name="hobby" value="王者荣耀"> 王者荣耀</label>
+            </td>
+        </tr>
+        <tr>
+            <td>邮箱：</td>
+            <td><input type="email" name="email" placeholder="请输入您的邮箱"></td>
+        </tr>
+        <tr>
+            <td>用户头像：</td>
+            <td><input type="file" name="avatar"></td>
+        </tr>
+        <tr>
+            <td>您的家庭住址是：</td>
+            <td><input type="text" name="address" placeholder="请输入您的家庭住址"></td>
+        </tr>
+        <tr>
+            <td>您的建议或者意见：</td>
+            <td><textarea name="suggestion" rows="4" cols="50" placeholder="您的建议或者意见"></textarea></td>
+        </tr>
+    </table>
+    <!-- 可视化表单 -->
+    <form action="#" method="post">
+        <div>
+            <label for="username">用户名称：</label>
+            <input type="text" id="username" name="username" placeholder="请输入用户名">
+        </div>
+        <div>
+            <label for="password">用户密码：</label>
+            <input type="password" id="password" name="password" placeholder="请输入密码">
+        </div>
+        <div>
+            <label>用户性别：</label>
+            <label><input type="radio" name="gender" value="男"> 男</label>
+            <label><input type="radio" name="gender" value="女"> 女</label>
+        </div>
+        <div>
+            <label>爱好：</label>
+            <label><input type="checkbox" name="hobby" value="足球"> 足球</label>
+            <label><input type="checkbox" name="hobby" value="篮球"> 篮球</label>
+            <label><input type="checkbox" name="hobby" value="LOL"> LOL</label>
+            <label><input type="checkbox" name="hobby" value="韩剧"> 韩剧</label>
+            <label><input type="checkbox" name="hobby" value="王者荣耀"> 王者荣耀</label>
+        </div>
+        <div>
+            <label for="email">邮箱：</label>
+            <input type="email" id="email" name="email" placeholder="请输入您的邮箱">
+        </div>
+        <div>
+            <label for="avatar">用户头像：</label>
+            <input type="file" id="avatar" name="avatar">
+        </div>
+        <div>
+            <label for="address">您的家庭住址是：</label>
+            <input type="text" id="address" name="address" placeholder="请输入您的家庭住址">
+        </div>
+        <div>
+            <label for="suggestion">您的建议或者意见：
