@@ -1,0 +1,65 @@
+const COLORS = ['red', 'orange', 'yellow', 'green', 'black', 'blue', 'purple'];
+const BURST_ALTITUDE = window.innerHeight - 150; // Burst altitude
+let burstQueue = []; // Track bursting order
+
+class Balloon {
+    constructor() {
+        this.element = document.createElement('div');
+        this.element.className = 'balloon';
+        this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
+        this.baseSize = 30; // Initial size
+        this.size = this.baseSize;
+        this.speed = Math.random() * 3 + 2;
+        this.x = Math.random() * window.innerWidth;
+        this.y = window.innerHeight;
+        this.burstDelay = Math.random() * 1000; // Stagger bursting
+        this.updateStyle();
+    }
+
+    updateStyle() {
+        this.element.style.backgroundColor = this.color;
+        this.element.style.width = this.size + 'px';
+        this.element.style.height = this.size + 'px';
+        this.element.style.left = this.x + 'px';
+        this.element.style.bottom = this.y + 'px';
+    }
+
+    update() {
+        if (this.y > BURST_ALTITUDE && !this.bursting) {
+            this.bursting = true;
+            setTimeout(() => this.burst(), this.burstDelay);
+        }
+        
+        if (!this.bursting) {
+            this.y -= this.speed;
+            // Increase size based on altitude
+            this.size = this.baseSize + (window.innerHeight - this.y) * 0.15;
+            this.updateStyle();
+        }
+    }
+
+    burst() {
+        this.element.style.opacity = '0';
+        setTimeout(() => this.element.remove(), 500);
+    }
+}
+
+// Animation loop
+let balloons = [];
+function animate() {
+    balloons = balloons.filter(balloon => {
+        balloon.update();
+        return !balloon.bursting;
+    });
+    
+    requestAnimationFrame(animate);
+}
+
+// Create balloons periodically
+setInterval(() => {
+    const balloon = new Balloon();
+    document.body.appendChild(balloon.element);
+    balloons.push(balloon);
+}, 2000);
+
+animate();
