@@ -1,0 +1,20 @@
+window.onload = function() {
+    let tbl = document.getElementsByTagName("table")[0];
+    let rows = Array.from(tbl.rows);
+    
+    // Sort by first name (first column)
+    rows.sort((a, b) => {
+        let aName = a.cells[0].innerHTML.toLowerCase();
+        let bName = b.cells[0].innerHTML.toLowerCase();
+        return aName.localeCompare(bName);
+    });
+
+    // Clear existing rows
+    while(tbl.rows.length > 0) {
+        tbl.deleteRow(0);
+    }
+    
+    // Append sorted rows
+    rows.forEach(row => {
+        tbl.appendChild(row);
+    });
